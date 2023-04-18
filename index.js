@@ -7,7 +7,6 @@ const cookieParser = require("cookie-parser");
 const setHeaders = require("./middleware/setHeaders")
 const corsConfig = require("./config/cors");
 const cors = require("cors");
-const socket = require("socket.io");
 require("dotenv").config();
 
 const PORT = process.env.PORT || 8080;
