@@ -13,19 +13,19 @@ router.get("/me",validateUser, validation)
 
 router.get("/persistence/:id", persistence)
 
-router.post("/logout",validateUser, logout)
+router.post("/logout", logout)
 
 router.put("/googlelogin", googlelogin);
 
-router.put("/profile",validateUser,profile)
+router.put("/profile",profile)
 
-router.put("/changePassword",validateUser,changePassword)
+router.put("/changePassword",changePassword)
 
-router.get("/",validateUser,users)
+router.get("/",users)
 
-router.get("/user/:id",validateUser, user)
+router.get("/user/:id",user)
 
-router.get("/search",validateUser, searchUser)
+router.get("/search",searchUser)
 
 
 module.exports = router;
