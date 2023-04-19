@@ -4,7 +4,7 @@ const origin = checkNodeEnvironment("https://butterflix.vercel.app", "http://loc
 
 const setHeaders = (req, res, next) => {
   // Website you wish to allow to connect
-  res.setHeader("Access-Control-Allow-Origin", origin);
+  res.setHeader("Access-Control-Allow-Origin", "https://butterflix.vercel.app");
 
   // Request methods you wish to allow
   res.setHeader("Access-Control-Allow-Methods", "GET, POST, OPTIONS, PUT, PATCH, DELETE");
