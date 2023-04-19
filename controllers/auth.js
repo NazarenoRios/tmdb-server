@@ -58,6 +58,7 @@ exports.persistence = (req,res) => {
       "pic"
     ]
   }).then(user => res.status(200).send(user))
+  .catch(err => console.log(err))
 }
 
 exports.logout = (req, res) => {
