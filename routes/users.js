@@ -17,9 +17,9 @@ router.post("/logout", logout)
 
 router.put("/googlelogin", googlelogin);
 
-router.put("/profile",profile)
+router.put("/profile/:id",profile)
 
-router.put("/changePassword",changePassword)
+router.put("/changePassword/:id",changePassword)
 
 router.get("/",users)
 
