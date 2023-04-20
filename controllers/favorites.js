@@ -2,6 +2,10 @@ const { User, Movies } = require("../models");
 
 exports.addFavorite = (req, res) => {
   const { userId, code, title, poster_path, vote_average, release_date, type } = req.query;
+
+  console.log(req.query)
+  console.log(type)
+
   User.findByPk(userId).then((user) => {
     Movies.findOrCreate({
       where: {
