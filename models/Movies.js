@@ -23,6 +23,10 @@ Movies.init(
 
     release_date: {
       type: DataTypes.STRING
+    },
+
+    type: {
+      type: DataTypes.STRING
     }
 
   },

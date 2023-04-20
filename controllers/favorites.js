@@ -1,7 +1,7 @@
 const { User, Movies } = require("../models");
 
 exports.addFavorite = (req, res) => {
-  const { userId, code, title, poster_path, vote_average, release_date } = req.query;
+  const { userId, code, title, poster_path, vote_average, release_date, type } = req.query;
   User.findByPk(userId).then((user) => {
     Movies.findOrCreate({
       where: {
@@ -9,7 +9,8 @@ exports.addFavorite = (req, res) => {
         title: title,
         poster_path: poster_path,
         raiting: vote_average,
-        release_date: release_date
+        release_date: release_date,
+        type: type
       },
     }).then((movie) => {
       user.addMovies(movie[0].dataValues.id);
@@ -18,11 +19,12 @@ exports.addFavorite = (req, res) => {
 };
 
 exports.removeFavorite = (req, res) => {
-  const { userId, code } = req.query;
+  const { userId, code, type } = req.query;
   User.findByPk(userId).then((user) => {
     Movies.findOne({
       where: {
         code: code,
+        type: type
       },
     }).then((movie) => {
       user.removeMovies(movie);
