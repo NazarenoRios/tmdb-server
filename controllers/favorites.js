@@ -35,7 +35,6 @@ exports.getFavorite = (req, res) => {
   User.findByPk(userId).then((user) => {
     user.getMovies()
         .then((movies) => {
-          console.log(movies)
           res.send(movies)
         });
   });

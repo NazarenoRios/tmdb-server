@@ -1,7 +1,8 @@
 const { User, Movies } = require("../models");
 
 exports.profile = (req, res) => {
-  const userId = req.user.id;
+
+  const { userId } = req.params;
 
   User.update(req.body, {
     where: { id: userId },
