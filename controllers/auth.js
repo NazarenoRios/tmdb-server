@@ -20,10 +20,10 @@ exports.login = (req, res) => {
       model: Movies,
     },
   }).then((user) => {
-    if (!user) return res.send(401);
+    if (!user) return res.sendStatus(401);
 
     user.validatePassword(password).then((isValid) => {
-      if (!isValid) return res.send(401);
+      if (!isValid) return res.sendStatus(401);
 
       const payload = {
         id: user.id,
