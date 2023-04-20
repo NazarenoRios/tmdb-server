@@ -100,7 +100,7 @@ exports.googlelogin = (req, res) => {
                 };
                 const token = tokens.generateToken(payload);
                 // res.cookie("token", token);
-                res.status(201).send(...payload,token);
+                res.status(201).send({...payload,token});
               })
             });
         }
@@ -116,7 +116,7 @@ exports.googlelogin = (req, res) => {
           };
           const token = tokens.generateToken(payload);
           // res.cookie("token", token);
-          res.status(201).send(...payload,token);
+          res.status(201).send({...payload,token});
         });
       });
     });
