@@ -22,7 +22,7 @@ app.use(cors(corsConfig));
 app.use("/api", routes);
 
 
-db.sync({force: true})
+db.sync({force: false})
   .then(function () {
     console.log("DB Connected");
     app.listen(PORT, () =>
