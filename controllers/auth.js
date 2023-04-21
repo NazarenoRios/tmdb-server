@@ -8,7 +8,9 @@ const client = new OAuth2Client(
 
 exports.register = (req, res) => {
   const user = req.body;
-  User.create(user).then(() => res.sendStatus(201));
+  User.create(user)
+    .then(() => res.sendStatus(201))
+    .catch(err => console.log(err))
 };
 
 exports.login = (req, res) => {
