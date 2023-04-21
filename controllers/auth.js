@@ -10,7 +10,7 @@ exports.register = (req, res) => {
   const user = req.body;
   User.create(user)
     .then(() => res.sendStatus(201))
-    .catch(err => console.log(err))
+    .catch(err => res.sendStatus(401) )
 };
 
 exports.login = (req, res) => {
